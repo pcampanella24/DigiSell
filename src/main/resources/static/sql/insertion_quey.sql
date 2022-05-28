@@ -1,0 +1,40 @@
+INSERT INTO manufacturers (id, name)
+VALUES
+    (1, 'Abarth'),
+    (2, 'Alfa Romeo'),
+    (3, 'Ferrari'),
+    (4, 'Fiat'),
+    (5, 'Lamborghini'),
+    (6, 'Lancia'),
+    (7, 'Maserati');
+
+INSERT INTO cars_models (id, manufacturer_id, name, typology, price, engine, cylinders, power, max_speed, weight, image)
+VALUES
+    (1, 1, '595', 'citycar', '26.000 €', '1.368 cm3', 4, '121 KW', '218 km/h', '1.035 kg', 'Abarth595.png'),
+    (2, 1, '595c', 'cabrio', '29.500 €', '1.368 cm3', 4, '121 KW', '218 km/h', '1.035 kg', 'Abarth595c.png'),
+    (3, 2, 'Giulia', 'sedan', '50.300 €', '1.995 cm3', 4, '148 KW', '235 km/h', '1.429 kg', 'AlfaGiulia.png'),
+    (4, 2, 'Stelvio', 'SUV', '57.500 €', '1.995 cm3', 4, '148 KW', '215 km/h', '1.660 kg', 'AlfaStelvio.png'),
+    (5, 2, 'Tonale', 'SUV', '35.500 €', '1.469 cm3', 4, '96 KW', '195 km/h', '1.525 kg', 'AlfaTonale.png'),
+    (6, 3, '296 GTB', 'coupe', '275.110 €', '2.992 cm3', 6, '488 KW', '330 km/h', '1.458 kg', 'Ferrari296GTB.png'),
+    (7, 3, 'Portofino', 'cabrio', '205.100 €', '3.855 cm3', 8, '456 KW', '320 km/h', '1.664 kg', 'FerrariPortofino.png'),
+    (8, 3, 'Roma', 'coupe', '205.736 €', '3.855 cm3', 8, '456 KW', '320 km/h', '1.495 kg', 'FerrariRoma.png'),
+    (9, 3, 'SF 90 Spider', 'cabrio', '478.498 €', '3.990 cm3', 8, '574 KW', '340 km/h', '1.649 kg', 'FerrariSF90Spider.png'),
+    (10, 3, 'SF 90 Stradale', 'coupe', '440.468 €', '3.990 cm3', 8, '574 KW', '340 km/h', '1.549 kg', 'FerrariSF90Stradale.png'),
+    (11, 4, '500', 'citycar', '17.000 €', '999 cm3', 3, '52 KW', '167 km/h', '905 kg', 'Fiat500.png'),
+    (12, 4, '500c', 'cabrio', '19.500 €', '999 cm3', 3, '52 KW', '167 km/h', '905 kg', 'Fiat500c.png'),
+    (13, 4, 'Panda', 'citycar', '14.750 €', '999 cm3', 3, '52 KW', '164 km/h', '980 kg', 'FiatPanda.png'),
+    (14, 4, 'Tipo', 'sedan', '20.950 €', '999 cm3', 3, '74 KW', '192 km/h', '1.240 kg', 'FiatTipo.png'),
+    (15, 4, 'Tipo SW', 'SW', '22.450 €', '999 cm3', 3, '74 KW', '191 km/h', '1.270 kg', 'FiatTipoSW.png'),
+    (16, 4, '500L', 'minivan', '21.050 €', '1.368 cm3', 4, '70 KW', '164 km/h', '1.255 kg', 'Fiat500L.png'),
+    (17, 4, '500X', 'SUV', '22.850 €', '999 cm3', 3, '88 KW', '188 km/h', '1.290 kg', 'Fiat500X.png'),
+    (18, 5, 'Huracán', 'coupe', '195.070 €', '5.204 cm3', 10, '449 KW', '325 km/h', '1.389 kg', 'LamboHuracan.png'),
+    (19, 5, 'Huracán Spyder', 'cabrio', '214.522 €', '5.204 cm3', 10, '449 KW', '324 km/h', '1.509 kg', 'LamboHuracanSpyder.png'),
+    (20, 5, 'Aventador', 'coupe', '344.250 €', '6.498 cm3', 12, '544 KW', '350 km/h', '1.575 kg', 'LamboAventador.png'),
+    (21, 5, 'Aventador Roadster', 'cabrio', '383.060 €', '6.498 cm3', 12, '544 KW', '350 km/h', '1.625 kg', 'LamboAventadorRoadster.png'),
+    (22, 5, 'Urus', 'SUV', '227.083 €', '3.996 cm3', 8, '478 KW', '305 km/h', '2.197 kg', 'LamboUrus.png'),
+    (23, 6, 'Ypsilon', 'compact_car', '15.900 €', '999 cm3', 3, '52 KW', '163 km/h', '980 kg', 'LanciaY.png'),
+    (24, 7, 'Ghibli', 'sedan', '94.780 €', '2.979 cm3', 6, '257 KW', '267 km/h', '1.850 kg', 'MaseratiGhibli.png'),
+    (25, 7, 'Grecale', 'SUV', '114.950 €', '3.000 cm3', 6, '390 KW', '285 km/h', '1.952 kg', 'MaseratiGrecale.png'),
+    (26, 7, 'MC20', 'coupe', '216.318 €', '3.000 cm3', 6, '463 KW', '325 km/h', '1.500 kg', 'MaseratiMC20.png'),
+    (27, 7, 'Quattroporte', 'sedan', '109.970 €', '2.979 cm3', 6, '257 KW', '270 km/h', '1.860 kg', 'MaseratiQuattroporte.png'),
+    (28, 7, 'Levante', 'SUV', '103.930 €', '2.979 cm3', 6, '257 KW', '251 km/h', '2.109 kg',  'MaseratiLevante.png'); 
