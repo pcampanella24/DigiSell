@@ -37,7 +37,7 @@ export default function Cart() {
                 <span>{model.name}{' '}</span>
                 <span>
                     Total:{' '}
-                    {(parseFloat(model.quantity) * parseFloat(model.price)).toFixed(3)}
+                    {(parseFloat(model.quantity) * parseFloat(model.price)).toFixed(3)} €
                 </span>
                 <div className={style.button_container}>
                     <button 
