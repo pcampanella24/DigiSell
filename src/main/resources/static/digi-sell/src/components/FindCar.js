@@ -7,7 +7,7 @@ import style from '../components/Styles.module.css';
 export default function FindCar() {
 
     const model = useSelector(state => state.car.findCar);
-    const car = model[0];
+    const modelPosition = model[0];
 
     const dispatch = useDispatch();
 
@@ -18,7 +18,6 @@ export default function FindCar() {
     const handleAddToCart = car => {
         dispatch(carActions.addToCart(car));
         dispatch(carActions.setShowCart());
-        dispatch(carActions.getTotals());
     };
 
     return (
@@ -26,7 +25,7 @@ export default function FindCar() {
             <Card>
                 <Card.Body>
                     <div>
-                        <Button 
+                        <Button
                             className={style.close_button}
                             onClick={() => handleClose()}
                         >
@@ -34,36 +33,36 @@ export default function FindCar() {
                         </Button>
                     </div>
                     <div>
-                        <Button 
+                        <Button
                             className={style.cart_button}
-                            onClick={() => handleAddToCart(car)}
+                            onClick={() => handleAddToCart(modelPosition)}
                         >
                                 <BsBag />
                         </Button>
                     </div>
-                    <Card.Title className={style.float_left}>{car.manufacturer.name}{' '}{car.name}</Card.Title>
-                    <Card.Title className={style.float_right}>Price:{car.price}</Card.Title>
-                    <Card.Img src={'/assets/img/' + car.image} alt={car.name} />
+                    <Card.Title className={style.float_left}>{modelPosition.manufacturer.name}{' '}{modelPosition.name}</Card.Title>
+                    <Card.Title className={style.float_right}>Price:{modelPosition.price}</Card.Title>
+                    <Card.Img src={'/assets/img/' + modelPosition.image} alt={modelPosition.name} />
                     <div className={style.float_left}>
                         <Card.Text>
-                            <strong>Engine: </strong>{car.engine}
+                            <strong>Engine: </strong>{modelPosition.engine}
                         </Card.Text>
                         <Card.Text>
-                            <strong>Power: </strong>{car.power}
+                            <strong>Power: </strong>{modelPosition.power}
                         </Card.Text>
                         <Card.Text>
-                            <strong>Weight: </strong>{car.weight}
+                            <strong>Weight: </strong>{modelPosition.weight}
                         </Card.Text>
                     </div>
                     <div className={style.float_right}>
                         <Card.Text>
-                            <strong>Number of cylinders: </strong>{car.cylinders}
+                            <strong>Number of cylinders: </strong>{modelPosition.cylinders}
                         </Card.Text>
                         <Card.Text>
-                            <strong>Max speed: </strong>{car.maxSpeed}
+                            <strong>Max speed: </strong>{modelPosition.maxSpeed}
                         </Card.Text>
                         <Card.Text>
-                            <strong>Typology: </strong>{car.typology}
+                            <strong>Typology: </strong>{modelPosition.typology}
                         </Card.Text>
                     </div>
                 </Card.Body>

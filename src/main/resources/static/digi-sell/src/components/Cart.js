@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { carActions } from '../store/cars';
-import style from '../components/Styles.module.css'
+import style from '../components/Styles.module.css';
 import { useEffect } from 'react';
 
 export default function Cart() {
@@ -22,8 +22,8 @@ export default function Cart() {
         dispatch(carActions.decrease(model));
     };
 
-    const handleRemoveFromCart = item => {
-        dispatch(carActions.removeFromCart(item))
+    const handleRemoveFromCart = model => {
+        dispatch(carActions.removeFromCart(model));
     };
 
     const handleReset = () => {
@@ -40,28 +40,27 @@ export default function Cart() {
                     {(parseFloat(model.quantity) * parseFloat(model.price)).toFixed(3)} €
                 </span>
                 <div className={style.button_container}>
-                    <button 
+                    <button
                         onClick={() => handleAddToCart(model)}
                     >
                         +
                     </button>
                     Quantity:{' '}{model.quantity}
-                    
-                    <button 
+
+                    <button
                         onClick={() => handleDecreaseToCart(model)}
                     >
                         -
                     </button>
-                    <button 
+                    <button
                         onClick={() => handleRemoveFromCart(model)}
                     >
                         Remove
                     </button>
                 </div>
-                    
-            </div> 
+            </div>
         );
-    })
+    });
 
     return (
         <div id='cart' className={style.cart_item}>

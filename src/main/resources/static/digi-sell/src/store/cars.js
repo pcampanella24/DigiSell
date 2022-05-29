@@ -9,8 +9,8 @@ const initialState = {
     showFind: false,
     showCart: false,
     showSearchButton: false,
-    cartTotalQuantity: 0,
-    cartTotalAmount: 0
+    /* cartTotalQuantity: 0,
+    cartTotalAmount: 0 */
 };
 
 const carSlice = createSlice({
@@ -53,9 +53,12 @@ const carSlice = createSlice({
             state.cart = item;
             if (state.cart.length === 0) {
                 state.showCart = false;
-            } 
+                toast.error('Cart Clear', {
+                    position: 'bottom-right'
+                });
+            }
             toast.error(`${action.payload.name} Removed From Cart`, {
-                position: 'bottom-right' 
+                position: 'bottom-right'
             });
         },
         decrease(state, action) {
@@ -74,6 +77,9 @@ const carSlice = createSlice({
                 state.cart = nextItem;
                 if (state.cart.length === 0) {
                     state.showCart = false;
+                    toast.error('Cart Clear', {
+                        position: 'bottom-right'
+                    });
                 }
                 toast.error(`${action.payload.name} Removed From Cart`, {
                     position: 'bottom-right'

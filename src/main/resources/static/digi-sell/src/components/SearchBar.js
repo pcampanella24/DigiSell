@@ -23,8 +23,8 @@ export default function SearchBar() {
         dispatch(carActions.setShowSearchButton());
     };
 
-    const handleSearch = model => {
-        dispatch(carActions.findByName(model));
+    const handleSearch = name => {
+        dispatch(carActions.findByName(name));
         dispatch(carActions.setShowSearchButtonFalse());
     };
 
