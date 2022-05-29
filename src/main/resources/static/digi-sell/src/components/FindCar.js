@@ -42,7 +42,7 @@ export default function FindCar() {
                         </Button>
                     </div>
                     <Card.Title className={style.float_left}>{car.manufacturer.name}{' '}{car.name}</Card.Title>
-                    <Card.Title className={style.float_rigth}>Price:{car.price}</Card.Title>
+                    <Card.Title className={style.float_right}>Price:{car.price}</Card.Title>
                     <Card.Img src={'/assets/img/' + car.image} alt={car.name} />
                     <div className={style.float_left}>
                         <Card.Text>
@@ -55,7 +55,7 @@ export default function FindCar() {
                             <strong>Weight: </strong>{car.weight}
                         </Card.Text>
                     </div>
-                    <div className={style.float_rigth}>
+                    <div className={style.float_right}>
                         <Card.Text>
                             <strong>Number of cylinders: </strong>{car.cylinders}
                         </Card.Text>

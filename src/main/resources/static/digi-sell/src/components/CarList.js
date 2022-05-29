@@ -22,8 +22,8 @@ export default function CarList() {
     };
 
     useEffect(() => {
-        const endoffset = itemOffset + itemsPerPage;
-        setCurrentItems(cars.slice(itemOffset, endoffset));
+        const endOffset = itemOffset + itemsPerPage;
+        setCurrentItems(cars.slice(itemOffset, endOffset));
         setPageCount(Math.ceil(cars.length / itemsPerPage));
     }, [itemOffset, itemsPerPage, cars]);
 
@@ -37,7 +37,7 @@ export default function CarList() {
             <div key={model.id} className={style.image}>
                 <h3>
                     {model.manufacturer.name} {' '} {model.name}
-                    <span className='float-rigth'>Price:{model.price}</span>
+                    <span className={style.float_right}>Price:{model.price}</span>
                 </h3>
                 <img src={'/assets/img/' + model.image} alt={model.name} />
                 <div className={style.float_left}>
@@ -45,7 +45,7 @@ export default function CarList() {
                     <p><strong>Power: </strong>{model.power}</p>
                     <p><strong>Weight: </strong>{model.weight}</p>
                 </div>
-                <div className={style.float_rigth}>
+                <div className={style.float_right}>
                     <p><strong>Number of cylinders: </strong>{model.cylinders}</p>
                     <p><strong>Max speed: </strong>{model.maxSpeed}</p>
                     <p><strong>Typology: </strong>{model.typology}</p>
