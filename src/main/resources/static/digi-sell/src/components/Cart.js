@@ -1,33 +1,28 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { carActions } from '../store/cars';
+import { cartActions } from '../store/cart';
 import style from '../components/Styles.module.css';
-import { useEffect } from 'react';
 
 export default function Cart() {
 
-    const cart = useSelector(state => state.car.cart);
-    /* const subTotal = useSelector(state => state.car.cartTotalAmount); */
+    const cart = useSelector(state => state.cart.cart);
+    const subTotal = useSelector(state => state.cart.cartTotalAmount);
 
     const dispatch = useDispatch();
 
-    /* useEffect(() => {
-        dispatch(carActions.getTotals());
-    }, [cart]); */
-
     const handleAddToCart = model => {
-        dispatch(carActions.addToCart(model));
+        dispatch(cartActions.addToCart(model));
     };
 
     const handleDecreaseToCart = model => {
-        dispatch(carActions.decrease(model));
+        dispatch(cartActions.decrease(model));
     };
 
     const handleRemoveFromCart = model => {
-        dispatch(carActions.removeFromCart(model));
+        dispatch(cartActions.removeFromCart(model));
     };
 
     const handleReset = () => {
-        dispatch(carActions.resetCart());
+        dispatch(cartActions.resetCart());
     };
 
     const cartList = cart.map(model => {
@@ -37,28 +32,28 @@ export default function Cart() {
                 <span>{model.name}{' '}</span>
                 <span>
                     Total:{' '}
-                    {(parseFloat(model.quantity) * parseFloat(model.price)).toFixed(3)} €
+                    {(parseFloat(model.quantity) * parseFloat(model.price)).toFixed(2)} €
                 </span>
                 <div className={style.button_container}>
-                    <button
+                    <button 
                         onClick={() => handleAddToCart(model)}
                     >
                         +
                     </button>
                     Quantity:{' '}{model.quantity}
-
-                    <button
+                    
+                    <button 
                         onClick={() => handleDecreaseToCart(model)}
                     >
                         -
                     </button>
-                    <button
+                    <button 
                         onClick={() => handleRemoveFromCart(model)}
                     >
                         Remove
                     </button>
                 </div>
-            </div>
+            </div> 
         );
     });
 
@@ -76,7 +71,7 @@ export default function Cart() {
                     onClick={() => alert('Not Enough Money')}
                 >
                     CheckOut
-                    {/* {subTotal} */}
+                    {' '}{subTotal} €
                 </button>
             </div>
         </div>

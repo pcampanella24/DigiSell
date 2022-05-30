@@ -2,7 +2,6 @@ package com.DigiSell.controllers;
 
 import com.DigiSell.model.entities.CarModel;
 import com.DigiSell.model.repositories.CarModelRepository;
-import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

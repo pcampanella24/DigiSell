@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { carActions } from '../store/cars';
+import { cartActions } from '../store/cart';
 import { BsCartCheck } from "react-icons/bs";
 import style from '../components/Styles.module.css';
 import { Anchor } from 'antd';
@@ -10,9 +11,9 @@ export default function SearchBar() {
 
     const selectValue = useSelector(state => state.car.selectValue);
     const allCars = useSelector(state => state.car.allCars);
-    const cart = useSelector(state => state.car.showCart);
+    const cart = useSelector(state => state.cart.showCart);
     const searchButton = useSelector(state => state.car.showSearchButton);
-    /* const totalItem = useSelector(state => state.car.cartTotalQuantity); */
+    const totalItem = useSelector(state => state.cart.cartTotalQuantity);
 
     const dispatch = useDispatch();
 
@@ -47,7 +48,8 @@ export default function SearchBar() {
                     <option>-- Select Car--</option>
                     {cars}
                 </select>
-                {searchButton && <button
+                {searchButton && 
+                <button
                     className={style.search_button}
                     onClick={() => handleSearch(find)}
                 >
@@ -59,7 +61,7 @@ export default function SearchBar() {
                     <span 
                         className={style.quantity}
                     >
-                        4{/* {totalItem} */}
+                        {totalItem}
                     </span>
                     <Anchor>
                         <Link href='#cart' title={

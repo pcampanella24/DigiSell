@@ -13,7 +13,7 @@ import './App.css';
 export default function App() {
 
   const showFind = useSelector(state => state.car.showFind);
-  const showCart = useSelector(state => state.car.showCart);
+  const showCart = useSelector(state => state.cart.showCart);
   
   const dispatch = useDispatch();
 

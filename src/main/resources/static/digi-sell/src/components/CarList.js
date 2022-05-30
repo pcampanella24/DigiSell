@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
 import { useDispatch, useSelector } from 'react-redux';
 import { carActions } from '../store/cars';
+import { cartActions } from '../store/cart';
 import { BsBag } from "react-icons/bs";
 import style from '../components/Styles.module.css';
 
@@ -28,8 +29,8 @@ export default function CarList() {
     }, [itemOffset, itemsPerPage, cars]);
 
     const handleAddToCart = model => {
-        dispatch(carActions.addToCart(model));
-        dispatch(carActions.setShowCart());
+        dispatch(cartActions.addToCart(model));
+        dispatch(cartActions.setShowCart());
     };
 
     const car = currentItems.map(model => {
@@ -37,17 +38,17 @@ export default function CarList() {
             <div key={model.id} className={style.image}>
                 <h3>
                     {model.manufacturer.name} {' '} {model.name}
-                    <span className={style.float_right}>Price:{model.price}</span>
+                    <span className={style.float_right}>Price:{model.price} €</span>
                 </h3>
                 <img src={'/assets/img/' + model.image} alt={model.name} />
                 <div className={style.float_left}>
-                    <p><strong>Engine: </strong>{model.engine}</p>
-                    <p><strong>Power: </strong>{model.power}</p>
-                    <p><strong>Weight: </strong>{model.weight}</p>
+                    <p><strong>Engine: </strong>{model.engine} cm<sup>3</sup></p>
+                    <p><strong>Power: </strong>{model.power} KW</p>
+                    <p><strong>Weight: </strong>{model.weight} kg</p>
                 </div>
                 <div className={style.float_right}>
                     <p><strong>Number of cylinders: </strong>{model.cylinders}</p>
-                    <p><strong>Max speed: </strong>{model.maxSpeed}</p>
+                    <p><strong>Max speed: </strong>{model.maxSpeed} km/h</p>
                     <p><strong>Typology: </strong>{model.typology}</p>
                 </div>
                 <div>
@@ -84,6 +85,6 @@ export default function CarList() {
                     activeLinkClassName={style.active}
                 />
             </div>
-        </>    
+        </>
     );
 }

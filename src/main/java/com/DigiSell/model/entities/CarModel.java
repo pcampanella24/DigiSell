@@ -21,25 +21,26 @@ public class CarModel {
     @Column(name = "typology")
     private Typology typology;
     @Column(name = "price")
-    private String price;
+    private double price;
     @Column(name = "engine")
-    private String engine;
+    private double engine;
     @Column(name = "cylinders")
     private int cylinders;
     @Column(name = "power")
-    private String power;
+    private int power;
     @Column(name = "max_speed")
-    private String maxSpeed;
+    private int maxSpeed;
     @Column(name = "weight")
-    private String weight;
+    private int weight;
     @Column(name = "image")
     private String image;
 
     public CarModel() {
     }
 
-    public CarModel(int id, Manufacturer manufacturer, String name, Typology typology, String price, String engine,
-                    int cylinders, String power, String maxSpeed, String weight, String image) {
+    public CarModel(int id, Manufacturer manufacturer, String name, Typology typology,
+                    double price, double engine, int cylinders, int power, int maxSpeed,
+                    int weight, String image) {
         this.id = id;
         this.manufacturer = manufacturer;
         this.name = name;
@@ -85,19 +86,19 @@ public class CarModel {
         this.typology = typology;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public String getEngine() {
+    public double getEngine() {
         return engine;
     }
 
-    public void setEngine(String engine) {
+    public void setEngine(double engine) {
         this.engine = engine;
     }
 
@@ -109,27 +110,27 @@ public class CarModel {
         this.cylinders = cylinders;
     }
 
-    public String getPower() {
+    public int getPower() {
         return power;
     }
 
-    public void setPower(String power) {
+    public void setPower(int power) {
         this.power = power;
     }
 
-    public String getMaxSpeed() {
+    public int getMaxSpeed() {
         return maxSpeed;
     }
 
-    public void setMaxSpeed(String maxSpeed) {
+    public void setMaxSpeed(int maxSpeed) {
         this.maxSpeed = maxSpeed;
     }
 
-    public String getWeight() {
+    public int getWeight() {
         return weight;
     }
 
-    public void setWeight(String weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 

@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { carActions } from '../store/cars';
+import { cartActions } from '../store/cart';
 import { Card, Button } from 'react-bootstrap';
 import { BsBag } from "react-icons/bs";
 import style from '../components/Styles.module.css';
@@ -12,12 +13,12 @@ export default function FindCar() {
     const dispatch = useDispatch();
 
     const handleClose = () => {
-        dispatch(carActions.setShowFindFalse());
+        dispatch(carActions.setShowFind());
     };
 
     const handleAddToCart = car => {
-        dispatch(carActions.addToCart(car));
-        dispatch(carActions.setShowCart());
+        dispatch(cartActions.addToCart(car));
+        dispatch(cartActions.setShowCart());
     };
 
     return (
@@ -25,7 +26,7 @@ export default function FindCar() {
             <Card>
                 <Card.Body>
                     <div>
-                        <Button
+                        <Button 
                             className={style.close_button}
                             onClick={() => handleClose()}
                         >
@@ -33,7 +34,7 @@ export default function FindCar() {
                         </Button>
                     </div>
                     <div>
-                        <Button
+                        <Button 
                             className={style.cart_button}
                             onClick={() => handleAddToCart(modelPosition)}
                         >
@@ -41,17 +42,17 @@ export default function FindCar() {
                         </Button>
                     </div>
                     <Card.Title className={style.float_left}>{modelPosition.manufacturer.name}{' '}{modelPosition.name}</Card.Title>
-                    <Card.Title className={style.float_right}>Price:{modelPosition.price}</Card.Title>
+                    <Card.Title className={style.float_right}>Price:{modelPosition.price} €</Card.Title>
                     <Card.Img src={'/assets/img/' + modelPosition.image} alt={modelPosition.name} />
                     <div className={style.float_left}>
                         <Card.Text>
-                            <strong>Engine: </strong>{modelPosition.engine}
+                            <strong>Engine: </strong>{modelPosition.engine} cm<sup>3</sup>
                         </Card.Text>
                         <Card.Text>
-                            <strong>Power: </strong>{modelPosition.power}
+                            <strong>Power: </strong>{modelPosition.power} KW
                         </Card.Text>
                         <Card.Text>
-                            <strong>Weight: </strong>{modelPosition.weight}
+                            <strong>Weight: </strong>{modelPosition.weight} kg
                         </Card.Text>
                     </div>
                     <div className={style.float_right}>
@@ -59,7 +60,7 @@ export default function FindCar() {
                             <strong>Number of cylinders: </strong>{modelPosition.cylinders}
                         </Card.Text>
                         <Card.Text>
-                            <strong>Max speed: </strong>{modelPosition.maxSpeed}
+                            <strong>Max speed: </strong>{modelPosition.maxSpeed} km/h
                         </Card.Text>
                         <Card.Text>
                             <strong>Typology: </strong>{modelPosition.typology}
