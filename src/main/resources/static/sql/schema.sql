@@ -10,11 +10,11 @@ CREATE TABLE IF NOT EXISTS cars_models (
     manufacturer_id INTEGER REFERENCES manufacturers (id),
     name VARCHAR(255) NOT NULL,                                 
     typology typology NOT NULL,
-    price VARCHAR(255) NOT NULL,
-    engine VARCHAR(255) NOT NULL,
+    price DECIMAL NOT NULL,
+    engine DECIMAL NOT NULL,
     cylinders INTEGER,
-    power VARCHAR(255) NOT NULL,
-    max_speed VARCHAR(255),
-    weight VARCHAR(255),
+    power INTEGER NOT NULL,
+    max_speed INTEGER,
+    weight INTEGER,
     image VARCHAR(255) NOT NULL
 );
